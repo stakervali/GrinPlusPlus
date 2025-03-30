@@ -16,8 +16,7 @@ add_subdirectory(src/Wallet)
 add_executable(Tests ${test_sources})
 target_compile_definitions(Tests PRIVATE INCLUDE_TEST_MATH)
 
-target_link_libraries(Tests PRIVATE
-    Catch2::Catch2
+target_link_libraries(Tests PRIVATE     
     API
     BlockChain
     Common
@@ -37,9 +36,9 @@ target_include_directories(Tests PRIVATE
     ${PROJECT_SOURCE_DIR}/src
 )
 
-include(CTest)
-include(Catch)
-catch_discover_tests(Tests DISCOVERY_MODE PRE_TEST)
+#include(CTest)
+#include(Catch)
+#catch_discover_tests(Tests DISCOVERY_MODE PRE_TEST)
 
 #add_custom_command(
 #    TARGET Tests POST_BUILD

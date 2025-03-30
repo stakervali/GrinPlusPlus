@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "description": "GrinPlusPlus C++ project",
   "homepage": "https://github.com/stakervali/GrinPlusPlus",
-  "dependencies": [
-    "libsodium",
-    "rocksdb",
-    "zlib",
-    "civetweb",
-    "minizip",
-    "roaring",
-    "asio",
-    "fmt",
-    "secp256k1-zkp",
-    "mio",
-    "catch2"
-  ]
+    "dependencies": [
+        "libsodium",
+        "rocksdb",
+        "zlib",
+        "civetweb",
+        "minizip",
+        "roaring",
+        "asio",
+        "fmt",
+        "secp256k1-zkp",
+        "mio",
+        "catch2"
+    ],
+    "overrides": [
+        {
+            "name": "catch2",
+            "version": "2.13.9#1"
+        }
+    ]
 }
