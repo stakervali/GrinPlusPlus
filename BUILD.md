@@ -37,3 +37,14 @@ Once your code is built, you can just open GrinNode.exe from your bin folder.
 4. ```cd build```
 5. ```cmake ..```
 6. ```cmake --build .```
+
+
+### Visual Studio 2022
+
+#### Additonal Instructions
+
+- vcpkg install --triplet x64-windows-static --overlay-triplets=H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_triplets --overlay-ports=H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_ports
+- cmake .. -DCMAKE_BUILD_TYPE=Debug -DGRINPP_TESTS=ON -DVCPKG_TARGET_TRIPLET=x64-windows-static -DVCPKG_OVERLAY_TRIPLETS=H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_triplets -DVCPKG_OVERLAY_PORTS=H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_ports -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDebug  -DCMAKE_PREFIX_PATH=H:/Github/stakervali/GrinPlusPlus/vcpkg_installed/x64-windows-static
+- add compiler option /wd4996 to project Common
+- add compiler option /wd4828 to project PoW
+- 
