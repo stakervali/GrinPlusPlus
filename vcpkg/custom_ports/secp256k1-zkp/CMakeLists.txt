@@ -1,6 +1,21 @@
 cmake_minimum_required(VERSION 3.8)
 project(secp256k1-zkp C)
 
+# Force static runtime on Windows
+if(MSVC)
+  # Use alternative approach to set runtime library
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
+  else()
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
+  endif()
+  foreach(flag CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE CMAKE_C_FLAGS_MINSIZEREL CMAKE_C_FLAGS_RELWITHDEBINFO)
+    if(${flag} MATCHES "/MD")
+      string(REGEX REPLACE "/MD" "/MT" ${flag} "${${flag}}")
+    endif()
+  endforeach()
+endif()
+
 option(INSTALL_HEADERS "Install header files" ON)
 
 add_definitions(

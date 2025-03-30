@@ -1,0 +1,8 @@
+{
+    "name": "secp256k1-zkp",
+    "version-string": "2023-04-12",
+    "description": "Optimized C library for EC operations on curve secp256k1 with support for zero-knowledge proofs",
+    "homepage": "https://github.com/mimblewimble/secp256k1-zkp",
+    "license": "MIT",
+    "supports": "!uwp"
+}
