@@ -1,0 +1,13 @@
+{
+    "default-registry": {
+        "kind": "git",
+        "repository": "https://github.com/microsoft/vcpkg",
+       "baseline": "acd5bba5aac8b6573b5f6f463dc0341ac0ee6fa4"
+    },
+    "overlay-ports": [
+        "H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_ports"
+    ],
+    "overlay-triplets": [
+        "H:/Github/stakervali/GrinPlusPlus/vcpkg/custom_triplets"
+    ]
+ }

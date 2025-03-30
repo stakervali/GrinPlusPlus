@@ -22,7 +22,12 @@ file(COPY
   DESTINATION "${SOURCE_PATH}/cmake/modules"
 )
 
-string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "dynamic" WITH_MD_LIBRARY)
+# This cause a link error in generated project
+# string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "dynamic" WITH_MD_LIBRARY)
+# Forcing static runtime (/MT or /MTd)
+set(WITH_MD_LIBRARY OFF)
+
+
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "static" ROCKSDB_DISABLE_INSTALL_SHARED_LIB)
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "dynamic" ROCKSDB_DISABLE_INSTALL_STATIC_LIB)
 
