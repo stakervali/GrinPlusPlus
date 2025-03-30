@@ -12,3 +12,7 @@ file(GLOB SOURCE_CODE
 add_library(${TARGET_NAME} STATIC ${SOURCE_CODE})
 target_compile_definitions(${TARGET_NAME} PRIVATE SPDLOG_WCHAR_FILENAMES)
 target_link_libraries(${TARGET_NAME} PUBLIC reproc++ fmt::fmt-header-only)
+
+if(MSVC)
+    target_compile_options(${TARGET_NAME} PRIVATE /wd4996)
+endif()

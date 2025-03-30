@@ -1,8 +1,8 @@
 {
-    "name": "grinplusplus",
-    "version": "0.1.0",
-    "description": "GrinPlusPlus C++ project",
-    "homepage": "https://github.com/stakervali/GrinPlusPlus",
+  "name": "grinplusplus",
+  "version": "0.1.0",
+  "description": "GrinPlusPlus C++ project",
+  "homepage": "https://github.com/stakervali/GrinPlusPlus",
     "dependencies": [
         "libsodium",
         "rocksdb",
@@ -15,5 +15,11 @@
         "secp256k1-zkp",
         "mio",
         "catch2"
+    ],
+    "overrides": [
+        {
+            "name": "catch2",
+            "version": "2.13.9#1"
+        }
     ]
 }
