@@ -332,3 +332,6 @@ cmake_install.cmake
 CMakeSettings.json
 
 output/
+
+/cmake-build-debug
+/vcpkg_installed
