@@ -90,7 +90,9 @@ void Connection::Thread_Connect(std::shared_ptr<Connection> pConnection)
         pConnection->m_lastPing = system_clock::now();
         pConnection->m_lastReceived = system_clock::now();
 
-        LOG_DEBUG_F("Connected to {}", pConnection->m_connectedPeer);
+        
+
+        LOG_DEBUG_F("Connected to {} with user agent {}", pConnection->m_connectedPeer, pConnection->m_connectedPeer.GetPeer()->GetUserAgent());
         pConnection->GetPeer()->SetConnected(true);
         pConnection->m_connectionManager.AddConnection(pConnection);
 
@@ -107,7 +109,7 @@ void Connection::Thread_Connect(std::shared_ptr<Connection> pConnection)
         );
     }
     catch (const std::exception& e) {
-        LOG_ERROR_F("Failed to connect to {}: {}", pConnection->m_connectedPeer, e);
+        LOG_ERROR_F("Failed to connect to {} ({}): {}", pConnection->m_connectedPeer,pConnection->m_connectedPeer.GetPeer()->GetUserAgent(), e);
     }
 }
 
